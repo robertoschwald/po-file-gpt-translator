@@ -24,6 +24,11 @@ dependencies {
   providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 
+  // Retry
+  implementation("org.springframework.retry:spring-retry")
+  implementation("org.springframework.boot:spring-boot-starter-aop")
+
+  // HTTP
   implementation("com.squareup.okhttp3:okhttp:4.9.1")
   implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
   implementation("org.json:json:20230227")

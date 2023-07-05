@@ -2,10 +2,18 @@ package de.oschwald.mofilegpttranslator
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.retry.annotation.EnableRetry
 
+@EnableRetry
 @SpringBootApplication
-class MoFileGptTranslatorApplication
+class MoFileGptTranslatorApplication {
 
-fun main(args: Array<String>) {
-  runApplication<MoFileGptTranslatorApplication>(*args)
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            runApplication<MoFileGptTranslatorApplication>(*args)
+        }
+    }
 }
+
+

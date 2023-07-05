@@ -12,11 +12,15 @@
   <label for="targetLanguage">Target Language:</label>
   <select name="targetLanguage" id="targetLanguage" required>
     <option value="" disabled selected>Select a language</option>
-    <option th:each="language : ${supportedLanguages}" th:value="${language}" th:text="${language}"></option>
+    <option th:each="language : ${supportedLanguages}" th:value="${language}" th:text="${language}" th:selected="${targetLanguage}"></option>
   </select>
   <br>
   <button type="submit">Upload</button>
 </form>
+
+<pre>
+  <div th:text="${translatedContent}"></div>
+</pre>
 
 </body>
 </html>

@@ -1,1 +1,1 @@
-rootProject.name = "mo-file-GPT-translator"
+rootProject.name = "po-file-GPT-translator"
