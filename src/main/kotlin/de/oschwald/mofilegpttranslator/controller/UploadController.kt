@@ -16,7 +16,7 @@ import java.io.File
 class UploadController(private val translationService: TranslationService) {
   private val log: Logger = LoggerFactory.getLogger(this::class.java)
 
-  private val supportedLanguages = listOf("English", "Spanish", "French", "German", "German Formal", "Chinese", "Japanese")
+  private val supportedLanguages = listOf("English", "Spanish", "French", "German Non-Formal", "German Formal", "Chinese", "Japanese")
 
   @GetMapping("/upload")
   fun showUploadForm(model: Model): ModelAndView {
@@ -38,6 +38,7 @@ class UploadController(private val translationService: TranslationService) {
     return if (translatedContent.isNotEmpty()) {
       model.addAttribute("message", "File uploaded and translated successfully.")
       model.addAttribute("translatedContent", translatedContent)
+      // Add download link
       ModelAndView("upload", model.asMap())
     } else {
       model.addAttribute("error", "Translation failed.")
